@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Work Sans", sans-serif;
+}
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light_pink: hsl(275, 100%, 97%);
+  --Grayish_purple: hsl(292, 16%, 49%);
+  --Dark_purple: hsl(292, 42%, 14%);
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+body {
+  background-image: url(../src/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+}
+
+.card {
+  width: 335px;
+  height: 60%;
+  background-color: var(--White);
+  padding: 20px;
+  box-shadow: 0px 15px 48px -20px var(--Dark_purple);
+  border-radius: 20px;
+}
+
+.navi {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+h1 {
+  display: inline;
+  color: var(--Dark_purple);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+ul {
+
+  list-style: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 0 20px 0;
+}
+
+button {
+  width: fit-content;
+  border: none;
+  background-color: var(--White);
+  position: fixed;
+  right: 12%;
+}
+
+.question {
+  width: 215px;
+  font-size: small;
+  color: var(--Dark_purple);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.question:hover {
+  color: var(--Grayish_purple);
+}
+
+hr {
+  border: 0.1px solid var(--Light_pink);
+}
+
+.answer {
+  width: 85%;
+  font-size: 12px;
+  color: var(--Grayish_purple);
+  margin-top: 1.3rem;
+}
