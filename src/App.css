@@ -20,31 +20,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-}
-
-body {
   background-image: url(../src/images/background-pattern-mobile.svg);
   background-repeat: no-repeat;
+
 }
 
+.attribution {
+  font-size: medium;
+  text-align: center;
+  position: fixed;
+  bottom: 3rem;
+  width: 35%;
+  color: var(--Dark_purple);
+  font-weight: 700;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* About the whole card */
 .card {
   width: 335px;
-  height: 60%;
+  height: auto;
   background-color: var(--White);
   padding: 20px;
   box-shadow: 0px 15px 48px -20px var(--Dark_purple);
   border-radius: 20px;
+  max-height: 99999px;
+  min-height: 65%;
 }
 
+/* the header and icon */
 .navi {
   display: flex;
   flex-direction: row;
-  height: 80px;
+  height: 60px;
   align-items: center;
   gap: 1.5rem;
 }
 
+/* header font */
 h1 {
   display: inline;
   color: var(--Dark_purple);
@@ -52,36 +68,25 @@ h1 {
   font-size: 2.5rem;
 }
 
-ul {
 
-  list-style: none;
-}
 
-.list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px 0 20px 0;
-}
-
-button {
-  width: fit-content;
-  border: none;
-  background-color: var(--White);
-  position: fixed;
-  right: 12%;
-}
-
-.question {
-  width: 215px;
+/* initial value of the content */
+.content {
+  width: 100%;
   font-size: small;
   color: var(--Dark_purple);
   font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
 }
 
-.question:hover {
+.content:hover {
   color: var(--Grayish_purple);
 }
 
@@ -89,9 +94,38 @@ hr {
   border: 0.1px solid var(--Light_pink);
 }
 
+/* after clicking the button */
+.hidden {
+  display: none;
+}
+
 .answer {
-  width: 85%;
+  width: 100%;
   font-size: 12px;
   color: var(--Grayish_purple);
-  margin-top: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 5px;
+
+}
+
+@media only screen and (min-width: 400px) {
+  #root {
+    background-image: url(../src/images/background-pattern-desktop.svg);
+  }
+
+  .navi {
+    margin-bottom: 2em;
+    margin-top: 1.5em;
+
+  }
+
+  .card {
+    width: 550px;
+  }
+
+  .content {
+    gap: 20px;
+    font-size: medium;
+  }
 }

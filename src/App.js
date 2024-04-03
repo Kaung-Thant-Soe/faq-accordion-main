@@ -5,45 +5,47 @@ import minus_image from "../src/images/icon-minus.svg";
 import plus_image from "../src/images/icon-plus.svg";
 import React, { useState } from "react";
 
-export default function App() {
-  const [open, setOpen] = useState(true);
-  const handleClick = function () {
-    setOpen();
+function App() {
+  const [click, setClick] = useState(null);
+  const toggle = (i) => {
+    if (click == i) {
+      console.log(null);
+      return setClick(null);
+    }
+    setClick(i);
+    console.log(i);
   };
   return (
     <div className="card">
-      <Header />
-      <FaqsComponent prop={open} onToggle={handleClick} />
+      <div className="navi">
+        <Icon />
+        <h1>FAQS</h1>
+      </div>
+      <div className="">
+        {data.map((item, i) => (
+          <>
+            <div className="content">
+              <div key={i}>{item.question}</div>
+
+              <span onClick={() => toggle(i)}>
+                <img src={click == i ? minus_image : plus_image} />
+              </span>
+            </div>
+            <div className={click === i ? "answer" : "hidden"}>
+              {item.answer}{" "}
+            </div>
+            <hr />
+          </>
+        ))}
+      </div>
+      <div class="attribution">
+        Challenge by{" "}
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+        . Coded by <a href="https://www.frontendmentor.io/profile/Kaung-Thant-Soe">Kaung Thant Soe </a>.
+      </div>
     </div>
   );
 }
-
-const Header = function () {
-  return (
-    <div className="navi">
-      <Icon />
-      <h1>FAQs</h1>
-    </div>
-  );
-};
-
-const FaqsComponent = function ({ onToggle, prop }) {
-  return data.map((list) => (
-    <>
-      <div className="list">
-        <ul>
-          <li key={list.id} className="question">
-            {list.question}
-          </li>
-          <li className="answer" style={{ display: "none" }}>
-            {list.answer}
-          </li>
-        </ul>
-        <button type="button" onClick={onToggle}>
-          <img src={prop ? plus_image : minus_image} alt="plus_button" />
-        </button>
-      </div>
-      <hr />
-    </>
-  ));
-};
+export default App;

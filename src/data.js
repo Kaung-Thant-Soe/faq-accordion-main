@@ -1,6 +1,5 @@
 export const data = [
   {
-    id: 0,
     question: "What is Frontend Mentor, and how will it help me?",
     answer: `
 	  Frontend Mentor offers realistic coding challenges to help developers improve their 
@@ -8,19 +7,16 @@ export const data = [
 	  all levels and ideal for portfolio building.`,
   },
   {
-    id: 1,
     question: `Is Frontend Mentor free?`,
     answer: `Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
 	  option providing access to a range of projects suitable for all skill levels.`,
   },
   {
-    id: 2,
     question: `Can I use Frontend Mentor projects in my portfolio?`,
     answer: `Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
 	  way to showcase your skills to potential employers!`,
   },
   {
-    id: 3,
     question: `
 	  How can I get help if I'm stuck on a Frontend Mentor challenge?`,
     answer: `
