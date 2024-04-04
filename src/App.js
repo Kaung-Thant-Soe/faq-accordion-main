@@ -9,11 +9,9 @@ function App() {
   const [click, setClick] = useState(null);
   const toggle = (i) => {
     if (click == i) {
-      console.log(null);
       return setClick(null);
     }
     setClick(i);
-    console.log(i);
   };
   return (
     <div className="card">
@@ -21,12 +19,11 @@ function App() {
         <Icon />
         <h1>FAQS</h1>
       </div>
-      <div className="">
+      <div>
         {data.map((item, i) => (
-          <>
+          <React.Fragment key={i}>
             <div className="content">
-              <div key={i}>{item.question}</div>
-
+              <div>{item.question}</div>
               <span onClick={() => toggle(i)}>
                 <img src={click == i ? minus_image : plus_image} />
               </span>
@@ -35,15 +32,19 @@ function App() {
               {item.answer}{" "}
             </div>
             <hr />
-          </>
+          </React.Fragment>
         ))}
       </div>
-      <div class="attribution">
+      <div className="attribution">
         Challenge by{" "}
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
           Frontend Mentor
         </a>
-        . Coded by <a href="https://www.frontendmentor.io/profile/Kaung-Thant-Soe">Kaung Thant Soe </a>.
+        . Coded by{" "}
+        <a href="https://www.frontendmentor.io/profile/Kaung-Thant-Soe">
+          Kaung Thant Soe{" "}
+        </a>
+        .
       </div>
     </div>
   );
